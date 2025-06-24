@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chef Profesional | Servicios Culinarios de Élite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Estilos personalizados */
+        .hero-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1577219491135-ce391730fb2c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+        }
+        
+        .dish-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-slide {
+            transition: opacity 0.5s ease;
+        }
+        
+        .active-slide {
+            opacity: 1;
+        }
+        
+        .inactive-slide {
+            opacity: 0;
+            display: none;
+        }
+        
+        .social-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Navegación -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold text-gray-800">
+                    <span class="text-amber-600">Chef</span> Maria Rodriguez
+                </div>
+                <div class="hidden md:flex space-x-10">
+                    <a href="#home" class="text-gray-800 hover:text-amber-600">Inicio</a>
+                    <a href="#about" class="text-gray-800 hover:text-amber-600">Sobre mí</a>
+                    <a href="#services" class="text-gray-800 hover:text-amber-600">Servicios</a>
+                    <a href="#gallery" class="text-gray-800 hover:text-amber-600">Galería</a>
+                    <a href="#Reseñas" class="text-gray-800 hover:text-amber-600">Reseñas</a>
+                    <a href="#contact" class="text-gray-800 hover:text-amber-600">Contacto</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-gray-800">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4">
+                <a href="#home" class="block py-2 text-gray-800 hover:text-amber-600">Inicio</a>
+                <a href="#about" class="block py-2 text-gray-800 hover:text-amber-600">Sobre mí</a>
+                <a href="#services" class="block py-2 text-gray-800 hover:text-amber-600">Servicios</a>
+                <a href="#gallery" class="block py-2 text-gray-800 hover:text-amber-600">Galería</a>
+                <a href="#contact" class="block py-2 text-gray-800 hover:text-amber-600">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-image flex items-center justify-center">
+        <div class="text-center px-4">
+            <h1 class="text-white text-4xl md:text-6xl font-bold mb-4">Experiencia Culinaria de Élite</h1>
+            <h2 class="text-white text-2xl md:text-3xl mb-8">Servicios de Chef Profesional a Domicilio</h2>
+            <a href="#contact" class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-6 rounded-full text-lg transition duration-300">Reserva Ahora</a>
+        </div>
+    </section>
+
+    <!-- Sobre Mí -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <img src="img/Chef.png" alt="Chef Maria Rodriguez" 
+                        class="rounded-lg shadow-xl w-full max-w-lg mx-auto">
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Sobre Mí</h2>
+                    <p class="text-gray-600 mb-4">Soy María Rodríguez, chef profesional con más de 15 años de experiencia en los mejores restaurantes de Europa y América Latina.</p>
+                    <p class="text-gray-600 mb-4">Graduada de Le Cordon Bleu en París, he trabajado en Michelin-starred restaurants y ahora ofrezco mis servicios para eventos exclusivos, cenas privadas y asesoría gastronómica.</p>
+                    <p class="text-gray-600 mb-6">Mi filosofía se basa en ingredientes frescos, técnicas innovadoras y presentaciones espectaculares que despiertan todos los sentidos.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="text-amber-600 mr-4 mt-1">
+                                <i class="fas fa-award text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Premios y Reconocimientos</h4>
+                                <p class="text-gray-600">Meilleur Ouvrier de France 2018, The World's 50 Best Restaurants</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-amber-600 mr-4 mt-1">
+                                <i class="fas fa-utensils text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Especialidades</h4>
+                                <p class="text-gray-600">Cocina fusión, maridaje perfecto, postres de autor y cocina saludable gourmet</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Servicios Exclusivos</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Ofrezco una variedad de servicios culinarios personalizados para ocasiones especiales y necesidades gourmet.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Servicio 1 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <div class="text-amber-600 mb-4 text-4xl">
+                        <i class="fas fa-glass-cheers"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Cenas Privadas</h3>
+                    <p class="text-gray-600 mb-4">Experiencias gastronómicas íntimas en tu hogar con menú personalizado y servicio impecable.</p>
+                    <ul class="text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-amber-600 mr-2 mt-1"></i>
+                            <span>Menú de 5 platos diseñado exclusivamente</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-amber-600 mr-2 mt-1"></i>
+                            <span>Incluye maridaje de vinos premium</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-amber-600 mr-2 mt-1"></i>
+                            <span>Servicio de meseros profesionales</span>
+                        </li>
+                    </ul>
+                    <span class="text-lg font-bold text-gray-800">Desde $1,500</span>
+                </div>
+                <!-- Servicio 2 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <div class="text-amber-600 mb-4 text-4xl">
+                        <i class="fas fa-birthday-cake"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Eventos Especiales</h3>
+                    <p class="text-gray-600 mb-4">Catering premium para bodas, aniversarios y eventos corporativos con presentación impecable.</p>
+                    <ul class="text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-amber-600 mr-2 mt-1"></i>
+                            <span>Coordinación completa del menú</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-amber-600 mr-2 mt-1"></i>
+                            <span>Personalización según tema del evento</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-amber-600 mr-2 mt-1"></i>
+                            <span>Soluciones para dietas especiales</span>
+                        </li>
+                    </ul>
+                    <span class="text-lg font-bold text-gray-800">Consulte disponibilidad</span>
+                </div>
+                <!-- Servicio 3 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <div class="text-amber-600 mb-4 text-4xl">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Clases Privadas</h3>
+                    <p class="text-gray-600 mb-4">Domina técnicas profesionales en la comodidad de tu cocina con lecciones personalizadas.</p>
+                    <ul class="text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-amber-600 mr-2 mt-1"></i>
+                            <span>Clases individuales o grupales</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-amber-600 mr-2 mt-1"></i>
+                            <span>Temas según tus intereses</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-amber-600 mr-2 mt-1"></i>
+                            <span>Cobertura profesional de fotos</span>
+                        </li>
+                    </ul>
+                    <span class="text-lg font-bold text-gray-800">Desde $200/hora</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería -->
+    <section id="gallery" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Mis Creaciones</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Una muestra de mis platos más destacados, donde el arte y la gastronomía se fusionan.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Plato 1 -->
+                <div class="dish-card bg-white rounded-lg overflow-hidden shadow-md transition duration-500 transform hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Plato gourmet" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Ravioles de Trufa Negra</h3>
+                        <p class="text-gray-600">Rellenos de ricotta casera con salsa de trufa negra y hierbas frescas.</p>
+                    </div>
+                </div>
+                <!-- Plato 2 -->
+                <div class="dish-card bg-white rounded-lg overflow-hidden shadow-md transition duration-500 transform hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Plato saludable" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Ensalada de Autor</h3>
+                        <p class="text-gray-600">Mezcla de vegetales orgánicos, frutos secos y vinagreta de frutos del bosque.</p>
+                    </div>
+                </div>
+                <!-- Plato 3 -->
+                <div class="dish-card bg-white rounded-lg overflow-hidden shadow-md transition duration-500 transform hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Plato principal" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Pollo al Estilo Moderno</h3>
+                        <p class="text-gray-600">Técnicas de cocción perfeccionadas con reducción de vino tinto y puré de coliflor.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <button id="loadMoreBtn" class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">
+                    Ver Más
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section id="Reseñas" class="py-20 bg-gray-800 text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Clientes Satisfechos</h2>
+                <p class="max-w-2xl mx-auto opacity-80">Lo que mis clientes dicen sobre mis servicios</p>
+            </div>
+            <div class="max-w-4xl mx-auto">
+                <div class="relative overflow-hidden">
+                    <div id="testimonials-container" class="flex transition-transform duration-500">
+                        <!-- Testimonio 1 -->
+                        <div class="testimonial-slide active-slide min-w-full px-4 text-center">
+                            <p class="text-lg italic mb-6">"La cena que preparó María fue simplemente espectacular. Cada plato era una obra de arte y el sabor era inigualable. Desde la presentación hasta el último bocado, una experiencia gastronómica que nunca olvidaremos."</p>
+                            <div class="flex items-center justify-center">
+                                <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Ana López" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <p class="font-bold">Ana López</p>
+                                    <p class="text-sm opacity-80">Evento: Cena de aniversario</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Contacto</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">¿Listo para reservar tu experiencia culinaria? Contáctame y juntos crearemos algo inolvidable.</p>
+            </div>
+            <form action="#" method="POST" class="max-w-lg mx-auto bg-gray-50 p-8 rounded-lg shadow-md">
+                <div class="mb-6">
+                    <label for="name" class="block text-gray-700 mb-2">Nombre</label>
+                    <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-600">
+                </div>
+                <div class="mb-6">
+                    <label for="email" class="block text-gray-700 mb-2">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-600">
+                </div>
+                <div class="mb-6">
+                    <label for="message" class="block text-gray-700 mb-2">Mensaje</label>
+                    <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-600"></textarea>
+                </div>
+                <button type="submit" class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 w-full">Enviar Mensaje</button>
+            </form>
+        </div>
+</body>
